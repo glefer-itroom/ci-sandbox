@@ -23,4 +23,4 @@ jobs:
         env:
           GITHUB_BASEREF: ${{ github.base_ref }}
           GITHUB_REF: ${{ github.ref }}
-          GITHUB: ${{ github }}
+          GITHUB: ${{ github.head_ref }}
