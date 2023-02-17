@@ -9,6 +9,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   clean:
     if: github.event.pull_request.merged == true
