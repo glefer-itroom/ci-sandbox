@@ -19,7 +19,7 @@ jobs:
       - name: Input check
         run: |
           echo "git push -d $GITHUB_BRANCH"
-          git push -d "$GITHUB_BRANCH"
+          git push origin -d "$GITHUB_BRANCH"
         env:
           GITHUB_BRANCH: ${{ github.head_ref }}
 #
