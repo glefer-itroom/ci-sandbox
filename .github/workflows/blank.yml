@@ -13,10 +13,10 @@ jobs:
   clean:
     if: github.event.pull_request.merged == true
     name: Input check
-    uses: dawidd6/action-delete-branch@v3
-    with:
-      github_token: ${{github.token}}
-      branches: ${{ github.head_ref }}
+    run: |
+      git push -d $GITHUB_BRANCH
+    env:
+      GITHUB_BRANCH: ${{ github.head_ref }}
 #
 #    runs-on: ubuntu-latest
 #    steps:
