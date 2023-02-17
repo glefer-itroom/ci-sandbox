@@ -18,7 +18,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Input check
         run: |
-          git push -d $GITHUB_BRANCH
+          echo "git push -d $GITHUB_BRANCH"
+          git push -d "$GITHUB_BRANCH"
         env:
           GITHUB_BRANCH: ${{ github.head_ref }}
 #
