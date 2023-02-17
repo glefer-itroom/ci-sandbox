@@ -13,11 +13,11 @@ jobs:
   clean:
     if: github.event.pull_request.merged == true
     steps:
-      name: Input check
-      run: |
-        git push -d $GITHUB_BRANCH
-      env:
-        GITHUB_BRANCH: ${{ github.head_ref }}
+      - name: Input check
+        run: |
+          git push -d $GITHUB_BRANCH
+        env:
+          GITHUB_BRANCH: ${{ github.head_ref }}
 #
 #    runs-on: ubuntu-latest
 #    steps:
