@@ -1,6 +1,4 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Autoclean fix
+name: Auto clean fix branches
 
 on:
   pull_request:
@@ -14,7 +12,7 @@ permissions:
 
 jobs:
   clean:
-    if: github.event.pull_request.merged == true
+    if: "github.event.pull_request.merged == true && startsWith(github.head_ref, 'fix/')"
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -25,11 +23,3 @@ jobs:
           git push origin -d "$GITHUB_BRANCH"
         env:
           GITHUB_BRANCH: ${{ github.head_ref }}
-#
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: test
-#        run: |
-#          echo "$GITHUB_HEAD_REF"
-#        env:
-#          GITHUB_HEAD_REF: ${{ github.head_ref }}
