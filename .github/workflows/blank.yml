@@ -19,6 +19,8 @@ jobs:
         run: |
           echo "BASEREF : $GITHUB_BASEREF"
           echo "REF : $GITHUB_REF"
+          echo "$GITHUB"
         env:
           GITHUB_BASEREF: ${{ github.base_ref }}
           GITHUB_REF: ${{ github.ref }}
+          GITHUB: ${{ github }}
